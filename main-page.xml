@@ -1,0 +1,19 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="loaded" class="page">
+    <Page.actionBar>
+        <ActionBar title="What's On Tap" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+    <GridLayout rows="80,*,80">
+        <Image src="~/imgs/logo.jpg" row="0" />
+        <ListView row="1" height="80%" items="{{ taplist }}" backgroundImage="~/imgs/bg.jpg">
+            <ListView.itemTemplate>
+                <StackLayout class="stack-holder" tap="beerDetails">
+                    <Label class="beer-name" text="{{ beer_name }}" textWrap="true" horizontalAlignment="left" />
+                    <Label class="beer-meta" text="{{ beer_meta }}" />
+                    <Label class="hr2" />
+                </StackLayout>
+            </ListView.itemTemplate>
+        </ListView>
+        <Button row="2" class="bottom-nav" text="Events" tap="viewEvents" />
+    </GridLayout>
+</Page>
